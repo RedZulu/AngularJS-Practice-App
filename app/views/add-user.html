@@ -1,0 +1,13 @@
+<div class="modal-body">
+  <form name="userForm">
+    <div class="form-group" ng-class="{ 'has-error': modalForm.modalInput.$invalid }" >
+      <label>Name</label><input type="text" ng-model="newUser.name" required/>
+      <label>Subscription Type</label><input type="text" ng-model="newUser.userType" required/>
+      <label>Loyalty Score</label><input type="number" ng-model="newUser.loyalty" required/>
+      <label>Date of Joining</label><input type="date" ng-model="newUser.joinDate" required/>
+      <br/>
+      <span ng-show="modalForm.modalInput.$error.required" class="help-block">Input is required.</span>
+      <button class="btn btn-success" ng-disabled="modalForm.$invalid" ng-class="{ 'disabled': modalForm.$invalid }" ng-click="saveNewUser()"> Save User</button>
+    </div>
+  </form>
+</div>
